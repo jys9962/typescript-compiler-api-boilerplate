@@ -8,9 +8,7 @@ export default (
 ) => (ctx: ts.TransformationContext) => {
   const { factory } = ctx;
   return (sourceFile: ts.SourceFile) => {
-
     function visit(node: ts.Node): ts.Node {
-
       if (ts.isStringLiteral(node) && node.text === 'before') {
         return factory.createStringLiteral('after');
       }
